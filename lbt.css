@@ -1,0 +1,50 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#banner {
+  background-color: #f00;
+  width: 1920px;
+  height: 1080px;
+  border: 1px solid #f00;
+  overflow: hidden;
+  position: relative;
+  margin: 20px auto;
+}
+
+#point{
+  width: 250px;
+  height: 80px;
+  position: absolute;
+  z-index: 100;
+  right: 5px;
+  bottom: 5px;
+}
+
+#point li{
+  width: 40px;
+  height: 40px;
+  float: left;
+  border-radius: 50%;
+  border:2px solid #f00;
+  background: #fff;
+  margin-left: 10px;
+}
+
+#img{
+  position: absolute;
+}
+
+#img li{
+  width: 1920px;
+  height: 1080px;
+  border: none;
+  display: none;
+}

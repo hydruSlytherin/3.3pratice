@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="lbt.css">
+  <title>轮播图练习</title>
+</head>
+<body>
+  <div id="banner">
+    <ul id="point">
+      <li style="background: #fc0;"></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+    <ul id="img">
+      <li style="display: block;"><img src="/1.jpg"></li>
+      <li><img src="/2.jpg"></li>
+      <li><img src="/3.jpg"></li>
+      <li><img src="/4.jpg"></li>
+    </ul>
+  </div>
+</body>
+</html>
+
+<script>
+  // //动态插入
+  // window.onload = function(){
+  //   let arr = new Array();
+  //   //获取图片路径
+  //   var cur_ul = document.getElementById("banner");
+  //   for(let i = 1;i<=4;i++){
+  //     var cur_li = document.createElement("li");
+  //     var cur_img = document.createElement("img");
+  //     cur_img.src = i + ".jpg";
+  //     cur_img.style.width = "400px";
+  //     cur_img.style.height = "200px";
+  //     cur_li.appendChild(cur_img);
+  //     cur_ul.appendChild(cur_li);
+  //     arr.push(cur_li);
+  //     arr[arr.length-1].style.left = "0px"
+  //   }
+  // }
+  //获取要操作的DOM节点对象
+  var point = document.getElementById("point");
+  var img = document.getElementById("img");
+
+  var poli = point.getElementsByTagName("li");
+  var imli = img.getElementsByTagName("li");
+  var num = 0;
+  // 获得切换效果 遍历添加事件
+  for(let i = 0;i<poli.length;i++){
+    poli[i].num = i;
+    poli[i].onmouseover = function(){
+      num = this.num;
+      for(let j = 0;j<poli.length;j++){
+        poli[j].style.backgroundColor = "#fff";
+      }
+      this.style.backgroundColor = '#fc0';
+
+      for(let k=0;k<poli.length;k++){
+        if(k==num){
+          imli[num].style.display = 'block';
+        }else{
+          imli[k].style.display = 'none';
+        }
+      }
+    }
+  }
+</script>
